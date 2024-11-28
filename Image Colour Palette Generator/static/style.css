@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.image-preview {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Color Bars Section */
+.color-bars {
+    margin-top: 30px;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;  /* Align with image width */
+    text-align: left;
+}
+
+/* Wrapper for color bar, code and percentage */
+.color-bar-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+/* Color Bar */
+.color-bar {
+    width: 50px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+/* Color Code */
+.color-code {
+    margin-left: 15px;
+    font-size: 16px;
+    color: #333;
+    width: 150px;
+    text-align: left;
+}
+
+/* Percentage */
+.color-percentage {
+    margin-left: 15px;
+    font-size: 16px;
+    color: #333;
+}

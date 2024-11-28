@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominant Colors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #F4F6F8;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #3B3B3B;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            display: inline-block;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .image-container img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .color-bar-container {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 3fr 2fr;
+            grid-gap: 15px;
+            align-items: center;
+            justify-items: center;
+        }
+        .color-bar {
+            height: 30px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .color-info {
+            text-align: left;
+            padding-left: 10px;
+        }
+        .color-code {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+        .color-percentage {
+            font-size: 14px;
+            color: #555;
+        }
+        .column-heading {
+            font-size: 18px;
+            color: #3B3B3B;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .color-bar-container > div {
+            text-align: center;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Extracted Dominant Colors</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="{{ image_url }}" alt="Uploaded Image">
+        </div>
+        <div class="color-bar-container">
+            <!-- Column Headings -->
+            <div class="column-heading">Color</div>
+            <div class="column-heading">Color Code</div>
+            <div class="column-heading">Percentage</div>
+        </div>
+        <div class="color-bar-container">
+            {% for color in color_data %}
+                <div class="color-bar" style="background-color: {{ color.color }};"></div>
+                <div class="color-info">
+                    <p class="color-code">{{ color.color }}</p>
+                </div>
+                <div class="color-info">
+                    <p class="color-percentage">{{ color.percentage|round(2) }}%</p>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        <a href="/" class="back-btn">Upload Another Image</a>
+    </div>
+</body>
+</html>
